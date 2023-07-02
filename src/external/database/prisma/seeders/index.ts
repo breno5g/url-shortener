@@ -2,10 +2,9 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main (): Promise<void> {
-  await prisma.user.create({
+  await prisma.url.create({
     data: {
-      email: 'johndoe@mail.com',
-      name: 'John Doe'
+      url: 'https://www.google.com'
     }
   });
 }

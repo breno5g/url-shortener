@@ -20,9 +20,7 @@ generator zod {
   prismaJsonNullability = true
 }
 
-model User {
-  id       Int     @id @default(autoincrement())
-  email    String  @unique /// @zod.email()
-  name     String?
-  password String /// @zod.regex(/(?=^.{8,}$)(?=.*\d)(?=.*[!@#$%^&*]+)(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$/g, "Invalid Password")
+model Url {
+  id String @id @default(uuid())
+  url String
 }
