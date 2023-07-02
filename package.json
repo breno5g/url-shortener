@@ -1,0 +1,63 @@
+{
+  "name": "api-template",
+  "version": "1.0.0",
+  "description": "Ts node api template with prisma and MySQL",
+  "main": "src/external/server.ts",
+  "author": "Breno Santos (breno5g)",
+  "keywords": [],
+  "license": "ISC",
+  "scripts": {
+    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/external/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child --watch src src/external/server.ts",
+    "test": "vitest",
+    "test:coverage": "vitest --coverage run",
+    "test:staged": "vitest run",
+    "lint": "npx eslint src",
+    "lint:fix": "npm run lint -- --fix",
+    "prepare": "husky install",
+    "db:format": "npx prisma format",
+    "db:migrate": "npx prisma migrate dev",
+    "db:migrate:reset": "npx prisma db migrate reset",
+    "db:reset": "npx prisma db push --force-reset && npx prisma db seed"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.6.1",
+    "bcrypt": "^5.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^8.5.1",
+    "prisma": "^4.6.1",
+    "reflect-metadata": "^0.1.13",
+    "zod": "^3.19.1"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.14",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/node": "^18.11.9",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@vitest/coverage-c8": "^0.25.2",
+    "eslint": "^8.0.1",
+    "eslint-config-standard-with-typescript": "^23.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "git-commit-msg-linter": "^4.2.1",
+    "husky": "^8.0.2",
+    "lint-staged": "^13.0.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "tsconfig-paths": "^4.1.0",
+    "typescript": "*",
+    "vitest": "^0.25.2",
+    "vitest-mock-extended": "^1.0.7",
+    "zod-prisma": "^0.5.4"
+  },
+  "prisma": {
+    "schema": "src/external/database/prisma/schema.prisma",
+    "seed": "ts-node src/external/database/prisma/seeders"
+  }
+}

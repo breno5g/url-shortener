@@ -1,0 +1,48 @@
+{
+  "compilerOptions": {
+    "target": "ES2016",
+    "module": "commonjs",
+    "lib": [
+      "ES6"
+    ],
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "removeComments": true,
+    "strict": true,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "baseUrl": "./",
+    "outDir": "./dist",
+    "rootDir": "./",
+    
+    "paths": {
+      "@controllers/*": [
+        "src/adapters/controllers/*"
+      ],
+      "@middlewares/*": [
+        "src/adapters/middlewares/*"
+      ],
+      "@repositories/*": [
+        "src/adapters/repositories/*"
+      ],
+      "@external/*": [
+        "src/external/*"
+      ],
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@services/*": [
+        "src/services/*"
+      ],
+      "@shared/*": [
+        "src/shared/*"
+      ]
+    }
+  }
+}
