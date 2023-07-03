@@ -17,7 +17,6 @@
     "baseUrl": "./",
     "outDir": "./dist",
     "rootDir": "./",
-    
     "paths": {
       "@controllers/*": [
         "src/adapters/controllers/*"
@@ -44,5 +43,5 @@
         "src/shared/*"
       ]
     }
-  }
+  },
 }

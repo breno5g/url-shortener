@@ -1,6 +1,10 @@
 import cors from 'cors';
 import express from 'express';
 
+import ErrorHandler from '@middlewares/errorHandler.middleware';
+
+import routes from './routes';
+
 const app = express();
 
 app.disable('x-powered-by');
@@ -15,6 +19,10 @@ const options: cors.CorsOptions = {
 
 app.use(express.json());
 app.use(cors(options));
+
+app.use(routes);
+
+app.use(ErrorHandler);
 
 app.get('/', (_req, res) => {
   res.send({ message: 'API' });

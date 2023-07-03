@@ -7,8 +7,8 @@
   "keywords": [],
   "license": "ISC",
   "scripts": {
-    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/external/server.js",
-    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child --watch src src/external/server.ts",
+    "start": "node -r ts-node/register/transpile-only -r tsconfig-paths/register dist/src/external/server.js",
+    "dev": "ts-node-dev -r tsconfig-paths/register --respawn --transpile-only --exit-child src/external/server.ts",
     "test": "vitest",
     "test:coverage": "vitest --coverage run",
     "test:staged": "vitest run",

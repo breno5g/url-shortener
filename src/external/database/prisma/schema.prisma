@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "mysql"
-  url      = env("DATABASE_URL")
+  provider = "sqlite"
+  url      = "file:./dev.db"
 }
 
 generator zod {
@@ -21,6 +21,7 @@ generator zod {
 }
 
 model Url {
-  id String @id @default(uuid())
-  url String
+  id   String @id @default(uuid())
+  url  String
+  hash String
 }
