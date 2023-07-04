@@ -6,6 +6,7 @@ package main
 import (
 	"bytes"
 	"encoding/json"
+	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -40,7 +41,7 @@ func main() {
 					url := c.String("url")
 
 					jsonStr := []byte(`{"url":"` + url + `"}`)
-					req, err := http.NewRequest("POST", "http://127.0.0.1:3001/url", bytes.NewBuffer(jsonStr))
+					req, err := http.NewRequest("POST", "https://url-shortener-9zlu.onrender.com/url", bytes.NewBuffer(jsonStr))
 
 					req.Header.Set("Content-Type", "application/json")
 
@@ -56,6 +57,8 @@ func main() {
 					var decodedRes UrlStruct
 
 					json.NewDecoder(res.Body).Decode(&decodedRes)
+
+					fmt.Print("Your shortened URL is: ", decodedRes.Url, "\n")
 
 					obj := qrcodeTerminal.New()
 
