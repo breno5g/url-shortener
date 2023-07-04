@@ -23,5 +23,4 @@ generator zod {
 model Url {
   id   String @id @default(uuid())
   url  String
-  hash String
 }
