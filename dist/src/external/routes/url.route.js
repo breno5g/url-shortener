@@ -1,0 +1,16 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.urlRouter = void 0;
+const client_1 = require("@prisma/client");
+const express_1 = require("express");
+const url_repositorie_1 = require("@repositories/url.repositorie");
+const url_service_1 = require("@services/url.service");
+const url_controller_1 = require("@controllers/url.controller");
+const db = new client_1.PrismaClient();
+const urlRepository = new url_repositorie_1.UrlRepository(db);
+const urlService = new url_service_1.UrlService(urlRepository);
+const urlController = new url_controller_1.UrlController(urlService);
+const urlRouter = (0, express_1.Router)();
+exports.urlRouter = urlRouter;
+urlRouter.post('/', urlController.createUrl);
+urlRouter.get('/:id', urlController.findOneById);
