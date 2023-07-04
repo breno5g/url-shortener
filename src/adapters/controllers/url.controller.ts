@@ -13,7 +13,7 @@ export class UrlController {
     try {
       const { url } = req.body;
       const newUrl = await this.service.createUrl(url);
-      res.status(201).send({ url: `localhost:3001/url/${newUrl}` });
+      res.status(201).send({ url: `https://url-shortener-9zlu.onrender.com/url/${newUrl}` });
     } catch (error) {
       next(error);
     }
