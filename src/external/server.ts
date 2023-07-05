@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import 'reflect-metadata';
-// import 'src/external/envConfig';
+import 'src/external/envConfig';
 
 import { app } from './app';
 
