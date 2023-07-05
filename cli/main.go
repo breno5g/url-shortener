@@ -27,7 +27,7 @@ func main() {
 		Commands: []*cli.Command{
 			{
 				Name:    "create",
-				Aliases: []string{"c"},
+				Aliases: []string{"-c"},
 				Usage:   "insert your URL",
 				Flags: []cli.Flag{
 					&cli.StringFlag{
@@ -40,8 +40,8 @@ func main() {
 				Action: func(c *cli.Context) error {
 					url := c.String("url")
 
-					jsonStr := []byte(`{"url":"` + url + `"}`)
-					req, err := http.NewRequest("POST", "https://url-shortener-9zlu.onrender.com/url", bytes.NewBuffer(jsonStr))
+					reqBody := []byte(`{"url":"` + url + `"}`)
+					req, err := http.NewRequest("POST", "https://url-shortener-9zlu.onrender.com/url", bytes.NewBuffer(reqBody))
 
 					req.Header.Set("Content-Type", "application/json")
 
