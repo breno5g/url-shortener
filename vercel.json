@@ -1,17 +1,15 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "src/external/server.js",
-            "use": "@vercel/node",
-            "config": { "includeFiles": ["dist/**"] }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(.*)",
-            "dest": "src/external/server.js"
-        }
-    ]
+  "version": 2,
+  "builds": [
+    {
+      "src": "src/external/server.ts",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/src/external/server.ts"
+    }
+  ]
 }
-
